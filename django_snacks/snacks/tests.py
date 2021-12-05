@@ -13,7 +13,7 @@ class thingsTests(SimpleTestCase):
         url = reverse('home')
         response = self.client.get(url)
         self.assertTemplateUsed(response, "home.html")
-        self.assertTemplateUsed(response, "base.html")
+        
 
 
     def test_about_page_status_code(self):
@@ -26,8 +26,6 @@ class thingsTests(SimpleTestCase):
         url = reverse('about_us')
         response = self.client.get(url)
         self.assertTemplateUsed(response, "about_us.html")
-        self.assertTemplateUsed(response, "base.html")
+        
 
-    def test_wrong_uri_404(self):
-        response = self.client.get('templates/blog')
-        self.assertEqual(response.status_code, 404)    
+    
